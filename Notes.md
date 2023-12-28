@@ -140,3 +140,40 @@ const App = () => {
 - Used to render content within the safe area boundaries of a device
 - Safe area is the portion of the screen that is not covered by the device status bar, notches, or home indicator
 - Ensures that content is in visible area making it accessible to users
+
+## Creating a React Native App
+
+There are several ways to create a React Native app. Let's create it using the Expo Router way.
+
+```sh
+npx create-expo-app@latest -e with-router <app-name>
+```
+
+This will create a new React Native app with the Expo Router template. It will also install all the dependencies.
+
+#### Building the App
+
+```sh
+npm start
+```
+
+This will build the app and start the development server. You can scan the QR code to open the app on your phone. You can also open the app in the web browser by following the link.
+
+## React Native - Project Guide
+
+The upcoming sections will guide you through the process of building a React Native app and all the concepts that are used along the way.
+
+#### Stack
+
+- A stack navigator provides a way for your app to transition between screens and manage navigation history
+- Used inside the layout component
+
+```jsx
+import { Stack } from 'expo-router';
+
+const Layout = () => {
+  return <Stack />;
+};
+
+export default Layout;
+```
