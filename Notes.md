@@ -158,22 +158,3 @@ npm start
 ```
 
 This will build the app and start the development server. You can scan the QR code to open the app on your phone. You can also open the app in the web browser by following the link.
-
-## React Native - Project Guide
-
-The upcoming sections will guide you through the process of building a React Native app and all the concepts that are used along the way.
-
-#### Stack
-
-- A stack navigator provides a way for your app to transition between screens and manage navigation history
-- Used inside the layout component
-
-```jsx
-import { Stack } from 'expo-router';
-
-const Layout = () => {
-  return <Stack />;
-};
-
-export default Layout;
-```
