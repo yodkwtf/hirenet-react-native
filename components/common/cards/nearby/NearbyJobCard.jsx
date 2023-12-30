@@ -7,14 +7,14 @@ import { images } from '../../../../constants';
 
 import { checkImageURL } from '../../../../utils';
 
-const NearbyJobCard = ({ item, handleNavigate }) => {
+const NearbyJobCard = ({ job, handleNavigate }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
       <TouchableOpacity style={styles.logoContainer}>
         <Image
           source={{
-            uri: checkImageURL(item?.employer_logo)
-              ? item.employer_logo
+            uri: checkImageURL(job?.employer_logo)
+              ? job.employer_logo
               : images.DEFAULT_EMPLOYER_LOGO_URL,
           }}
           resizeMode="contain"
@@ -24,10 +24,10 @@ const NearbyJobCard = ({ item, handleNavigate }) => {
 
       <View style={styles.textContainer}>
         <Text style={styles.jobName} numberOfLines={1}>
-          {item.job_title}
+          {job.job_title}
         </Text>
         <Text style={styles.jobType} numberOfLines={1}>
-          {item.job_employment_type}
+          {job.job_employment_type}
         </Text>
       </View>
     </TouchableOpacity>

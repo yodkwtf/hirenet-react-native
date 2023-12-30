@@ -7,17 +7,17 @@ import { images } from '../../../../constants';
 
 import { checkImageURL } from '../../../../utils';
 
-const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
+const PopularJobCard = ({ job, selectedJob, handleCardPress }) => {
   return (
     <TouchableOpacity
-      style={styles.container(selectedJob, item)}
-      onPress={() => handleCardPress(item)}
+      style={styles.container(selectedJob, job)}
+      onPress={() => handleCardPress(job)}
     >
-      <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
+      <TouchableOpacity style={styles.logoContainer(selectedJob, job)}>
         <Image
           source={{
-            uri: checkImageURL(item?.employer_logo)
-              ? item.employer_logo
+            uri: checkImageURL(job?.employer_logo)
+              ? job.employer_logo
               : images.DEFAULT_EMPLOYER_LOGO_URL,
           }}
           resizeMode="contain"
@@ -26,15 +26,15 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
       </TouchableOpacity>
 
       <Text style={styles.companyName} numberOfLines={1}>
-        {item.employer_name}
+        {job.employer_name}
       </Text>
 
       <View style={styles.infoContainer}>
-        <Text style={styles.jobName(selectedJob, item)} numberOfLines={1}>
-          {item.job_title}
+        <Text style={styles.jobName(selectedJob, job)} numberOfLines={1}>
+          {job.job_title}
         </Text>
         <Text style={styles.location} numberOfLines={1}>
-          {item.job_country}
+          {job.job_country}
         </Text>
       </View>
     </TouchableOpacity>
