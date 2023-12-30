@@ -4,5 +4,5 @@ JobLink is a mobile application that allows users to search for jobs and apply f
 
 ## Todos
 
-- [ ] Fix font error
+- [x] Fix font error
 - [ ] Add more info on job listing page (description, isRemote, etc.)

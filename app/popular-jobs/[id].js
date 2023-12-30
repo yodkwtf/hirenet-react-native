@@ -14,11 +14,11 @@ import axios from 'axios';
 import { ScreenHeaderBtn, NearbyJobCard } from '../../components';
 import { COLORS, icons, SIZES } from '../../constants';
 import styles from '../../styles/search';
-import {
-  popularJobTerm,
-  rapidApiHost,
-  rapidApiKey,
-} from '../../constants/config';
+import { popularJobTerm } from '../../constants/config';
+import { RAPID_API_KEY, RAPID_API_HOST } from '@env';
+
+export const rapidApiKey = process.env.RAPID_API_KEY;
+export const rapidApiHost = process.env.RAPID_API_HOST;
 
 const PopularJobsList = () => {
   const params = useGlobalSearchParams();
