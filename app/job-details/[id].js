@@ -19,6 +19,7 @@ import {
 } from '../../components';
 import { COLORS, SIZES, icons } from '../../constants';
 import useFetch from '../../hook/useFetch';
+import { GOOGLE_CAREER_PAGE_URL } from '../../constants/config';
 
 const tabs = ['About', 'Qualifications', 'Responsibilities'];
 
@@ -137,7 +138,7 @@ const JobDetails = () => {
           url={
             data[0]?.job_apply_link ??
             data[0]?.job_google_link ??
-            'https//careers.google.com/jobs/results'
+            GOOGLE_CAREER_PAGE_URL
           }
         />
       </>

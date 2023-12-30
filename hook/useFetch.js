@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { RAPID_API_KEY, RAPID_API_HOST } from '@env';
-
-const rapidApiKey = process.env.RAPID_API_KEY;
-const rapidApiHost = process.env.RAPID_API_HOST;
+import { rapidApiHost, rapidApiKey } from '../constants/config';
 
 const useFetch = (endpoint, query) => {
   const [data, setData] = useState([]);
