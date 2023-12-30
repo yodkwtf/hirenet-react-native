@@ -37,15 +37,15 @@ const PopularJobsList = () => {
       const options = {
         method: 'GET',
         url: `https://jsearch.p.rapidapi.com/search`,
-        headers: {
-          'X-RapidAPI-Key': rapidApiKey,
-          'X-RapidAPI-Host': rapidApiHost,
-        },
         params: {
           query: popularJobTerm,
           page: page.toString(),
           country: jobCountryCode,
           radius: jobRadius,
+        },
+        headers: {
+          'X-RapidAPI-Key': rapidApiKey,
+          'X-RapidAPI-Host': rapidApiHost,
         },
       };
 

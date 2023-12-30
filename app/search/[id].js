@@ -33,13 +33,13 @@ const JobSearch = () => {
       const options = {
         method: 'GET',
         url: `https://jsearch.p.rapidapi.com/search`,
-        headers: {
-          'X-RapidAPI-Key': rapidApiKey,
-          'X-RapidAPI-Host': rapidApiHost,
-        },
         params: {
           query: params.id,
           page: page.toString(),
+        },
+        headers: {
+          'X-RapidAPI-Key': rapidApiKey,
+          'X-RapidAPI-Host': rapidApiHost,
         },
       };
 

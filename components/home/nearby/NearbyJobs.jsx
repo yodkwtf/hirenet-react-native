@@ -24,7 +24,7 @@ const NearbyJobs = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Near You</Text>
+        <Text style={styles.headerTitle}>Nearby</Text>
         <TouchableOpacity
           onPress={() => router.push(`/nearby-jobs/${nearbyJobTerm}`)}
         >
@@ -36,7 +36,7 @@ const NearbyJobs = () => {
         {isLoading ? (
           <ActivityIndicator size="large" colors={COLORS.primary} />
         ) : error ? (
-          <Text>{error}</Text>
+          <Text>OOPS! Something went wrong.</Text>
         ) : (
           data?.map((job) => (
             <NearbyJobCard
