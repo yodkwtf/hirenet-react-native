@@ -5,20 +5,29 @@ import styles from './nearbyjobs.style';
 import { COLORS } from '../../../constants';
 import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard';
 import useFetch from '../../../hook/useFetch';
+import {
+  jobCountryCode,
+  jobRadius,
+  nearbyJobTerm,
+} from '../../../constants/config';
 
 const NearbyJobs = () => {
   const router = useRouter();
 
   const { data, isLoading, error } = useFetch('search', {
-    query: 'React Developer',
+    query: nearbyJobTerm,
+    country: jobCountryCode,
+    radius: jobRadius,
     num_pages: 1,
   });
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Nearby Jobs</Text>
-        <TouchableOpacity>
+        <Text style={styles.headerTitle}>Near You</Text>
+        <TouchableOpacity
+          onPress={() => router.push(`/nearby-jobs/${nearbyJobTerm}`)}
+        >
           <Text style={styles.headerBtn}>View all</Text>
         </TouchableOpacity>
       </View>

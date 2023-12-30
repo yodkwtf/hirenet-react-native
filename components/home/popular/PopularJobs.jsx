@@ -12,12 +12,19 @@ import styles from './popularjobs.style';
 import { COLORS, SIZES } from '../../../constants';
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 import useFetch from '../../../hook/useFetch';
+import {
+  jobCountryCode,
+  jobRadius,
+  popularJobTerm,
+} from '../../../constants/config';
 
 const PopularJobs = () => {
   const router = useRouter();
 
   const { data, isLoading, error } = useFetch('search', {
-    query: 'React Developer',
+    query: popularJobTerm,
+    country: jobCountryCode,
+    radius: jobRadius,
     num_pages: 1,
   });
 
@@ -31,8 +38,10 @@ const PopularJobs = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Popular Jobs</Text>
-        <TouchableOpacity>
+        <Text style={styles.headerTitle}>Trending</Text>
+        <TouchableOpacity
+          onPress={() => router.push(`/popular-jobs/${popularJobTerm}`)}
+        >
           <Text style={styles.headerBtn}>View all</Text>
         </TouchableOpacity>
       </View>
