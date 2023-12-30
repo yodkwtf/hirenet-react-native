@@ -2,10 +2,6 @@
 
 JobLink is a React Native app that provides a convenient platform for finding nearby job opportunities. It leverages the JSearch API to fetch and display job listings based on user preferences.
 
-## Preview
-
-![JobLink Preview](./assets/app-preview.gif)
-
 ## Features
 
 - **Nearby Jobs:** Discover job opportunities in your vicinity.
